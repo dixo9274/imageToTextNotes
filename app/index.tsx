@@ -1,23 +1,3 @@
-// import { Redirect } from "expo-router";
-// import { Text } from "@rneui/themed";
-// import { View } from "react-native";
-// import React from "react";
-
-// export default function IndexPage() {
-//   return <Redirect href={"/(tabs)/index"} />;
-//   // return <Redirect href={"/(auth)/login"} />;
-// }
-
-// const index = () => {
-//   return (
-//     <View>
-//       <Text>index</Text>
-//     </View>
-//   );
-// };
-
-// export default index;
-
 import { useState, useEffect } from 'react'
 import { supabase } from '../lib/supabase'
 // import Auth from '../components/Auth'
@@ -34,19 +14,15 @@ export default function App() {
   useEffect(() => {
     supabase.auth.getSession().then(({ data: { session } }) => {
       if (session) {
-        console.log ("inside if get session");
         router.replace("/(tabs)/Home")
       }
-      console.log ("in get session, but not in if");
     });
 
     supabase.auth.onAuthStateChange((_event, session) => {
       if (session) {
-        console.log ("tabs home from auth state change");
         router.replace("/(tabs)/Home")
       }
       else {
-        console.log ("auth login from auth state change");
         router.replace("/(auth)/login")
       }
     });
