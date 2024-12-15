@@ -11,9 +11,8 @@ export default function HomeScreen() {
       headerBackgroundColor={{ light: '#A1CEDC', dark: '#1D3D47' }}
       headerImage={
         <Image
-          source={require('../../assets/images/noteHeader.png')}
-          style={styles.reactLogo}
-          resizeMode='contain'
+            source={require('@/assets/images/partial-react-logo.png')}
+            style={styles.reactLogo}
         />
       }>
       <ThemedView style={styles.titleContainer}>
@@ -43,10 +42,10 @@ const styles = StyleSheet.create({
     marginBottom: 8,
   },
   reactLogo: {
-    height: 150,
-    width: 150,
-    bottom: 10,
-    left: 10,
+    height: 178,
+    width: 290,
+    bottom: 0,
+    left: 0,
     position: 'absolute',
   },
 });
