@@ -44,7 +44,7 @@ export default function TabLayout() {
         name="Saved Notes"
         options={{
           title: 'Saved',
-          tabBarIcon: ({ color }) => <Image source={require('../../assets/images/notes.png')} style={{ width: 28, height: 28, resizeMode: 'contain'}} />,
+          tabBarIcon: ({ color }) => <IconSymbol size={28} name="paperplane.fill" color={color} />,        
         }}
       />
       <Tabs.Screen
