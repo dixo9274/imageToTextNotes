@@ -11,8 +11,9 @@ export default function HomeScreen() {
       headerBackgroundColor={{ light: '#A1CEDC', dark: '#1D3D47' }}
       headerImage={
         <Image
-          source={require('@/assets/images/partial-react-logo.png')}
+          source={require('@/assets/images/noteHeader.png')}
           style={styles.reactLogo}
+          resizeMode='contain'
         />
       }>
       <ThemedView style={styles.titleContainer}>
@@ -23,7 +24,8 @@ export default function HomeScreen() {
         <ThemedText type="subtitle">About ImageToTextNotes</ThemedText>
         <ThemedText>
           ImageToTextNotes is a tool to extract text from reasonably clear images. 
-          This extracted text can be copied or saved to your notes.
+          This extracted text can be copied or saved to your notes. Head over to the Upload page 
+          to get started with extracting text, and view these notes on the Saved page!
         </ThemedText>
       </ThemedView>
     </ParallaxScrollView>
@@ -41,37 +43,10 @@ const styles = StyleSheet.create({
     marginBottom: 8,
   },
   reactLogo: {
-    height: 178,
-    width: 290,
-    bottom: 0,
-    left: 0,
+    height: 150,
+    width: 150,
+    bottom: 10,
+    left: 10,
     position: 'absolute',
   },
 });
-
-// import { useState, useEffect } from 'react'
-// import { supabase } from '../../lib/supabase'
-// import Auth from '../../components/Auth'
-// import Account from '../../components/Account'
-// import { View } from 'react-native'
-// import { Session } from '@supabase/supabase-js'
-
-// export default function HomeScreen() {
-//   const [session, setSession] = useState<Session | null>(null)
-
-//   useEffect(() => {
-//     supabase.auth.getSession().then(({ data: { session } }) => {
-//       setSession(session)
-//     })
-
-//     supabase.auth.onAuthStateChange((_event, session) => {
-//       setSession(session)
-//     })
-//   }, [])
-
-//   return (
-//     <View>
-//       {session && session.user ? <Account key={session.user.id} session={session} /> : <Auth />}
-//     </View>
-//   )
-// }

@@ -1,6 +1,6 @@
 import { useState, useEffect } from 'react'
 import { supabase } from '../../lib/supabase'
-import { StyleSheet, View, Alert } from 'react-native'
+import { StyleSheet, View, Alert, Text } from 'react-native'
 import { Button, Input } from '@rneui/themed'
 import { User } from '@supabase/supabase-js'
 
@@ -75,6 +75,7 @@ export default function Account() {
 
   return (
     <View style={styles.container}>
+      <Text style={styles.title}>Account</Text>
       <View style={[styles.verticallySpaced, styles.mt20]}>
         <Input label="Email" value={user?.email} disabled />
       </View>
@@ -84,7 +85,7 @@ export default function Account() {
 
       <View style={[styles.verticallySpaced, styles.mt20]}>
         <Button
-          title={loading ? 'Loading ...' : 'Update'}
+          title={loading ? 'Loading ...' : 'Update Username'}
           onPress={() => updateProfile({ username, avatar_url: avatarUrl })}
           disabled={loading}
         />
@@ -99,8 +100,14 @@ export default function Account() {
 
 const styles = StyleSheet.create({
   container: {
-    marginTop: 40,
-    padding: 12,
+    flex: 1,
+    padding: 40,
+  },
+  title: {
+    fontSize: 24,
+    fontWeight: "bold",
+    marginBottom: 10,
+    color: "#333",
   },
   verticallySpaced: {
     paddingTop: 4,
