@@ -34,15 +34,19 @@ export default function App() {
   useEffect(() => {
     supabase.auth.getSession().then(({ data: { session } }) => {
       if (session) {
+        console.log ("inside if get session");
         router.replace("/(tabs)/Home")
       }
+      console.log ("in get session, but not in if");
     });
 
     supabase.auth.onAuthStateChange((_event, session) => {
       if (session) {
+        console.log ("tabs home from auth state change");
         router.replace("/(tabs)/Home")
       }
       else {
+        console.log ("auth login from auth state change");
         router.replace("/(auth)/login")
       }
     });

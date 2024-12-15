@@ -44,8 +44,7 @@ export default function TabLayout() {
         name="Saved Notes"
         options={{
           title: 'Saved',
-          tabBarIcon: ({ color }) => <IconSymbol size={28} name="paperplane.fill" color={color} />,        
-        }}
+          tabBarIcon: ({ color }) => <IconSymbol size={28} name="paperplane.fill" color={color} />,        }}
       />
       <Tabs.Screen
         name="Account"
